@@ -4,16 +4,12 @@ function removeTpYtPaperDialog() {
     if (tpYtPaperDialog) {
       tpYtPaperDialog.remove();
     }
-  }
-  
-  // Überprüfen, ob die Erweiterung aktiviert ist
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const tabId = tabs[0].id;
-    chrome.storage.local.get([tabId], (result) => {
-      if (result[tabId]) {
+}
+
+// Überprüfen, ob die Erweiterung aktiviert ist
+chrome.storage.local.get("extensionStatus", (result) => {
+    if (result.extensionStatus) {
         // Erweiterung ist aktiviert, entfernen Sie das Element
         removeTpYtPaperDialog();
-      }
-    });
-  });
-  
+    }
+});
