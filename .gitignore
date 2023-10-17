@@ -1,0 +1,11 @@
+# Visual Studio Code Workspace-Dateien
+.vscode/
+*.code-workspace
+
+# Entwicklungsumgebungen
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
